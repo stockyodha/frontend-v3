@@ -1,0 +1,81 @@
+#tc {
+  position: fixed;
+  overflow: hidden;
+  z-index: 9999;
+  right: 0px;
+}
+
+#tc.show {
+  display: block;
+}
+
+.toastr {
+  position: relative;
+  z-index: 1000;
+  margin: 25px 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(22, 21, 23, 0.2);
+  box-shadow: rgb(22 21 23 / 10%) 0px 0px 15px 0px;
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+}
+
+.toastr.cursor {
+  cursor: pointer;
+}
+
+.toastr.success {
+  background: linear-gradient(40deg, rgba(1, 170, 38, .3), rgba(0, 0, 0, 0) 60%);
+  color: #fff;
+
+  .title {
+    color: #01AA26;
+    font-weight: 500;
+  }
+
+  .message {
+    color: #CFD0D0;
+  }
+}
+
+.toastr.error {
+  background: linear-gradient(40deg, rgba(202, 15, 16, .3), rgba(0, 0, 0, 0) 60%);
+  color: #fff;
+
+  .title {
+    color: #CA0F0F;
+    font-weight: 500;
+  }
+
+  .message {
+    color: #CFD0D0;
+  }
+}
+
+.toastr.info {
+  background: linear-gradient(40deg, rgba(66, 107, 182, 0.3), rgba(0, 0, 0, 0) 60%);
+  color: #fff;
+
+  .title {
+    color: #426BB6;
+    font-weight: 500;
+  }
+
+  .message {
+    color: #CFD0D0;
+  }
+}
+
+.toastr.warn {
+  background: linear-gradient(40deg, rgba(245, 146, 8, 0.3), rgba(0, 0, 0, 0) 60%);
+  color: #fff;
+
+  .title {
+    color: #F59208;
+    font-weight: 500;
+  }
+
+  .message {
+    color: #CFD0D0;
+  }
+}

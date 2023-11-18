@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "./app/core/theme/typography.scss";
+@import "./app/core/theme/styles.scss";
+// @import "./app/@core/theme/colors.scss";
+// @import "./app/@core/theme/variables.scss";
+// @import "./app/@core/theme/mixins.scss";
+@import "./app/core/theme/animations.scss";
+// @import "./app/@core/theme/overrides.scss";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap.scss';
+@import './app/core/theme/toast.scss';
+@import './app/core/theme/dialog.scss';
+
+html,
+body {
+  height: 100%;
+}

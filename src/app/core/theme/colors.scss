@@ -1,0 +1,36 @@
+//  Primary Colors
+// white
+$primary-white-100-40: rgba(255, 255, 255, 0.4);
+$primary-white-100: rgba(255, 255, 255, 1);
+$primary-white-300: rgba(140, 142, 143, 1);
+$primary-white-400: rgba(75, 78, 79, 1);
+$primary-white-500: rgba(52, 55, 57, 1);
+$primary-white-600: rgba(42, 45, 47, 1);
+
+// copper
+$primary-copper-400: rgba(249, 211, 180, 1);
+$primary-copper-400-40: rgba(249, 211, 180, 0.4);
+$primary-copper-600: rgba(217, 137, 106, 1);
+$primary-copper-800: rgba(148, 84, 57, 1);
+$primary-copper-horizontal-gradient: linear-gradient(to right, $primary-copper-600, $primary-copper-800);
+$primary-copper-vertical-gradient: linear-gradient(to top, $primary-copper-600, $primary-copper-800);
+
+// blue
+$primary-blue-400: rgba(66, 107, 182, 1);
+$primary-blue-700: rgba(38, 69, 140, 1);
+$primary-blue-800: rgba(27, 45, 91, 1);
+$primary-blue-900: rgba(24, 38, 62, 1);
+$primary-blue-gradient: linear-gradient(to top, $primary-blue-400, $primary-blue-700);
+
+
+// Secondary Colors
+// purple
+$secondary-purple-200: rgba(187, 134, 252, 1);
+$secondary-purple-500: rgba(98, 0, 238, 1);
+$secondary-purple-700: rgba(55, 0, 179, 1);
+
+// teal
+$secondary-teal-200: rgba(3, 218, 197, 1);
+$secondary-teal-700: rgba(1, 135, 134, 1);
+
+$dark-background: #212426;

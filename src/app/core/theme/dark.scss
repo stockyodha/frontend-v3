@@ -1,0 +1,98 @@
+@import "./colors.scss";
+
+.body.dark {
+  background-color: $dark-background;
+  color: $primary-white-400;
+
+  .frame {
+    background: $dark-background;
+    box-shadow: inset -6px -6px 12px rgba(255, 255, 255, 0.08), inset 6px 6px 12px #0000002e;
+  }
+
+  .divider {
+    width: 100%;
+    border-width: 10px;
+    box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04), 8px 8px 12px rgba(0, 0, 0, 0.16);
+    // border-color: linear-gradient(180deg, rgba(16, 17, 18, 0.2) 0%, rgba(33, 36, 38, 0) 100%);
+  }
+
+
+  .input-row {
+    background: linear-gradient(95.04deg, rgba(0, 0, 0, 0.12) 3.11%, rgba(0, 0, 0, 0) 94.96%), #212426;
+    border: 2px solid rgba(255, 255, 255, 0.02);
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 12px rgba(0, 0, 0, 0.16);
+
+    input {
+
+      color: $primary-copper-400;
+    }
+  }
+
+  .search-bar {
+    border: 2px rgba(255, 255, 255, 0.02);
+    background: linear-gradient(95.04deg, rgba(0, 0, 0, 0.12) 3.11%, rgba(0, 0, 0, 0) 94.96%), #212426;
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 12px rgba(0, 0, 0, 0.16);
+
+    .icon {
+      background: linear-gradient(95.04deg, rgba(84, 84, 84, 0.12) 3.11%, rgba(0, 0, 0, 0.12) 94.96%), #212426;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04), 8px 8px 12px rgba(0, 0, 0, 0.16);
+
+    }
+
+    input {
+      color: $primary-copper-400;
+    }
+
+  }
+
+  .card {
+    background: #212426;
+    box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04), 8px 8px 12px rgba(0, 0, 0, 0.16);
+    border-radius: 14px;
+  }
+
+
+  .card-flat {
+    background: $primary-white-600;
+    color: $primary-white-300;
+
+    .icon {
+      filter: brightness(0.7) sepia(20%) hue-rotate(0deg) saturate(60);
+    }
+  }
+
+  .tip {
+    img {
+      filter: brightness(0.7) sepia(20%) hue-rotate(190deg) saturate(35);
+    }
+
+    span {
+      color: $primary-white-300;
+      background-color: #000;
+    }
+  }
+
+  table {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    tr {
+      color: #CFD0D0;
+      margin: 0;
+    }
+  }
+
+  .btn.btn-primary {
+    color: $primary-copper-400;
+    background: linear-gradient(#426bb6, #24658c);
+    border-width: 5px;
+    border-color: #3B4042;
+    border-radius: 100px;
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 12px rgba(0, 0, 0, 0.16);
+  }
+}
