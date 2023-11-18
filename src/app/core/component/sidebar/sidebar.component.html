@@ -1,0 +1,14 @@
+i<!-- Sidebar -->
+<div @fade id="mySidenav" class="sidenav">
+    <p class="sm-heading mx-auto d-none d-sm-block d-md-none" style="color: #f9d3b4; padding: 8px 8px 8px 32px;">stock
+      yodha</p>
+    <a class="closebtn" (click)="sidebarService.toggleOpen(false)">&times;</a>
+    <a (click)="onNavigate()" routerLink="/dashboard/home" routerLinkActive="active">home</a>
+    <a (click)="onNavigate()" routerLink="/dashboard/market" routerLinkActive="active">market</a>
+    <a (click)="onNavigate()" routerLink="/dashboard/screener" routerLinkActive="active">screener</a>
+    <a (click)="onNavigate()" routerLink="/dashboard/portfolio" routerLinkActive="active">my portfolio</a>
+    <a (click)="onNavigate()" routerLink="/dashboard/wallet" routerLinkActive="active">wallet</a>
+    <a (click)="onNavigate()" routerLink="/dashboard/setting" routerLinkActive="active">setting</a>
+    <a (click)="onNavigate()" routerLink="/auth/logout" routerLinkActive="active">logout</a>
+  </div>
+  

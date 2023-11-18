@@ -1,0 +1,12 @@
+<div>
+    <div id="wrapper">
+      <app-sidebar *ngIf="sidebarService.isOpen"></app-sidebar>
+      <nav id="content">
+        <app-header></app-header>
+        <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+          <router-outlet></router-outlet>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
