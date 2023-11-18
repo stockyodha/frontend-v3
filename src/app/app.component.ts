@@ -10,11 +10,6 @@ export class AppComponent {
   title = 'fe';
 
   constructor(private auth: AuthService) {
-    this.test();
   }
 
-  async test() {
-    const res = await this.auth.checkUsername('test')
-    console.log(res);
-  }
 }

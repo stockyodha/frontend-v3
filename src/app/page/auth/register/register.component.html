@@ -1,1 +1,31 @@
-<p>register works!</p>
+<div class="container get-started d-flex align-items-center justify-content-center">
+    <div>
+      <h1 class="xl-heading">hello,<br> let's start with a name</h1>
+      <form (ngSubmit)="onCreateUser()">
+        <div class="input-row">
+          <input name="guest-username" type="text" placeholder="Enter a username" [(ngModel)]="username"
+            (keyup)="checkUsername()">
+          <div class="loading warning" *ngIf="status == 'loading'">
+            <div class="loader"></div>
+          </div>
+          <div (click)="onCreateUser()" class="loading success" *ngIf="status == 'available'">
+            <img class="arrow-right" src="assets/images/icons/arrow-right-success.svg">
+          </div>
+          <div class="loading error" *ngIf="status == 'unavailable'">
+            <img class="" src="assets/images/icons/exclamation.svg">
+          </div>
+        </div>
+        <div *ngIf="status == 'loading' || status == 'init'">
+          <p class="sm-heading warning">{{ messages[status] }}</p>
+        </div>
+        <div class="s" *ngIf="status == 'available'">
+          <p class="sm-heading success">{{ messages[status] }}</p>
+        </div>
+        <div class="s" *ngIf="status == 'unavailable'">
+          <p class="sm-heading error">{{ messages[status] }}</p>
+        </div>
+      </form>
+      <button class="btn btn-primary" routerLink="/auth/login">Already have an account?</button>
+    </div>
+  </div>
+  
