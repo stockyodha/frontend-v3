@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -20,41 +21,41 @@ export class RegisterComponent {
     unavailable: 'this soul is already taken',
   };
   username: string = '';
-  lastKeyStroke = Date.now();
-  getStarted: any;
-  timer: any | undefined;
+  private usernameSubject = new Subject<string>();
 
   constructor(private userService: UserService, private router: Router) {
-    //  delete localStorage.getItem('token');
-    if (localStorage.getItem('token')) {
+    this.clearToken();
+    this.usernameSubject.pipe(
+      debounceTime(3000),
+      distinctUntilChanged(),
+      switchMap(username => {
+        this.status = 'loading';
+        return this.userService.checkUsername(username);
+      })
+    ).subscribe((result: boolean) => {
+      this.status = !result ? 'available' : 'unavailable';
+    });
+  }
+
+  private clearToken(): void {
+    const isTokenSet = localStorage.getItem('token') != null;
+    const isRefreshTokenSet = localStorage.getItem('refreshToken') != null;
+
+    if (isTokenSet) {
       localStorage.removeItem('token');
+    }
+    if (isRefreshTokenSet) {
+      localStorage.removeItem('refreshToken');
+    }
+    if (isTokenSet || isRefreshTokenSet) {
       window.location.reload();
     }
   }
+
   checkUsername(): void {
-    this.status = 'loading';
-    // if timer is dirty that means we are still waiting for the last keystroke
-    if (this.timer) {
-      return;
-    }
-    // wait for 3 seconds after last keystroke
-    if (Date.now() - this.lastKeyStroke < 3000) {
-      this.status = 'loading';
-      this.timer = setTimeout(() => {
-        // clear timeout
-        this.timer = undefined;
-        this.checkUsername();
-      }, 3000);
-    }
-    console.log('Checking username...', this.username, this.lastKeyStroke);
-    this.lastKeyStroke = Date.now();
     if (this.username.length > 0) {
       this.status = 'loading';
-      this.userService
-        .checkUsername(this.username)
-        .then((result: boolean) => {
-          this.status = result ? 'available' : 'unavailable';
-        });
+      this.usernameSubject.next(this.username);
     } else {
       this.status = 'init';
     }
