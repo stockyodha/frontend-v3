@@ -1,0 +1,25 @@
+@import "./../../theme/colors.scss";
+
+.headers {
+  height: 70px;
+}
+
+.togglr {
+  width: 30px;
+}
+
+.sm-heading {
+  color: #f9d3b4;
+}
+
+.search {
+  width: 500px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .search {
+    width: 300px;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="headers container">
+    <div class="header">
+  
+    </div>
+    <div class="header d-flex justify-content-between align-items-center">
+      <div class="logo d-flex">
+        <img class="togglr mt-1" *ngIf="!ss.isOpen" (click)="ss.toggleOpen(true)" src="assets/images/icons/menu.svg">
+        <img class="togglr mt-1" *ngIf="ss.isOpen" style="visibility: hidden;" (click)="ss.toggleOpen(false)"
+          src="assets/images/icons/close.svg">
+        <a class="text-decoration-none d-none d-md-block d-lg-block d-xl-block" routerLink="/dashboard">
+          <h1 class="mx-2 mt-2 sm-heading">stock yodha</h1>
+        </a>
+      </div>
+  
+      <div class="search mt-2 position-relative">
+        <div class="search-bar">
+          <img class="icon" src="assets/images/icons/magnify.svg" alt="">
+          <input type="text" placeholder="search stocks, users ...." class="search-input" [(ngModel)]="query">
+          <img *ngIf="query.length > 0" class="icon" style="cursor: pointer;" src="assets/images/icons/close.svg"
+            alt="clear" (click)="query = ''">
+        </div>
+        <app-search-result class="search-result position-absolute" *ngIf="query.length > 0" [query]="query"
+          (onClick)="query = ''">
+        </app-search-result>
+      </div>
+  
+      <div class="icons"> <a *ngIf="user !=undefined" routerLink="/dashboard/notification">
+          <img src="assets/images/icons/notification.svg" alt="notifcation_icon" />
+        </a>
+      </div>
+    </div>
+  
+  </div>
