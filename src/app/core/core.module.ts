@@ -6,10 +6,12 @@ import { HeaderComponent } from './component/header/header.component';
 import { HeaderLayoutComponent } from './layout/header-layout/header-layout.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { DynamicPipe } from './pipe/dynamic.pipe';
+import { FullLayoutComponent } from './layout/full-layout/full-layout.component';
 
 const COMMON_COMPONENTS = [
   HeaderComponent,
   HeaderLayoutComponent,
+  FullLayoutComponent,
   SidebarComponent,
 ];
 
