@@ -5,14 +5,12 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StockComponent } from './stock/stock.component';
 import { CoreModule } from 'src/app/core/core.module';
-import { DashboardComponent } from './dashboard.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     StockComponent,
-    DashboardComponent
   ],
   imports: [
     CommonModule,

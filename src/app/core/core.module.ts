@@ -2,17 +2,18 @@ import { CommonModule, CurrencyPipe, DatePipe, DecimalPipe } from '@angular/comm
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './component/header/header.component';
-import { HeaderLayoutComponent } from './layout/header-layout/header-layout.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
+
 import { DynamicPipe } from './pipe/dynamic.pipe';
+import { HeaderComponent } from './component/header/header.component';
+import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { HeaderLayoutComponent } from './layout/header-layout/header-layout.component';
 import { FullLayoutComponent } from './layout/full-layout/full-layout.component';
 
 const COMMON_COMPONENTS = [
   HeaderComponent,
+  SidebarComponent,
   HeaderLayoutComponent,
   FullLayoutComponent,
-  SidebarComponent,
 ];
 
 const PIPE = [DynamicPipe];

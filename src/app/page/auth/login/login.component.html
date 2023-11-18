@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="container d-flex justify-content-center align-items-center">
+    <div>
+      <h1 class="xxl-heading">welcome back,<br>log in to access your account</h1>
+      <form (ngSubmit)="onLogin()">
+        <div class="input-row mt-4">
+          <input name="user-name" type="text" autocomplete="username" placeholder="username" [(ngModel)]="username">
+        </div>
+        <div class="input-row mt-4">
+          <input name="user-password" type="password" autocomplete="current-password" placeholder="password"
+            [(ngModel)]="password">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4 float-end w-100">login</button>
+        <button class="btn btn-primary mt-4 float-end w-100" routerLink="/auth/get-started">dont have an account?</button>
+      </form>
+    </div>
+  </div>
+  

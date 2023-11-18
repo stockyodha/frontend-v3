@@ -25,6 +25,12 @@ query Me {
 }
 `;
 
+const LOGIN = gql`
+query Query($password: String!, $username: String!) {
+  login(password: $password, username: $username)
+}
+`;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -60,6 +66,23 @@ export class AuthService {
         return data.me;
       })
     ));
+  }
+
+
+  login(username: string, password: string): Promise<boolean> {
+    const result = firstValueFrom(this.apollo.query({
+        query: LOGIN,
+        variables: {
+          username,
+          password
+        }
+      }).pipe(map(result => {
+          const data = result.data as GQLQuery;
+          return data.login;
+        })
+      )
+    );
+    return result;
   }
 
 }
