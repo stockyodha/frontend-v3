@@ -3,6 +3,7 @@
       <app-sidebar *ngIf="sidebarService.isOpen"></app-sidebar>
       <nav id="content">
         <app-header></app-header>
+        <app-sidebar></app-sidebar>
         <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
           <router-outlet></router-outlet>
         </div>

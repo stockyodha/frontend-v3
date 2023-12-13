@@ -19,6 +19,10 @@ const routes: Routes = [
         loadComponent: () => import('./forgot-password/forgot-password.component').then(m => m.ForgotPasswordComponent)
       },
       {
+        path: 'logout',
+        loadComponent: () => import('./logout/logout.component').then(m => m.LogoutComponent)
+      },
+      {
         path: '',
         redirectTo: 'login',
         pathMatch: 'full'

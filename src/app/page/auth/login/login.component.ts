@@ -15,11 +15,7 @@ export class LoginComponent {
   password: string = '';
   status: string = 'Enter your username and password';
   constructor(private authService: AuthService, private router: Router) {
-    const token = localStorage.getItem('token');
-    if (token) {
-      localStorage.removeItem('token');
-      window.location.reload();
-    }
+    this.clearToken();
   }
 
   async onLogin() {
@@ -28,6 +24,21 @@ export class LoginComponent {
     if (result) {
       window.location.href = '/dashboard/home';
       this.router.navigate(['/dashboard/home']);
+    }
+  }
+
+  private clearToken(): void {
+    const isTokenSet = localStorage.getItem('token') != null;
+    const isRefreshTokenSet = localStorage.getItem('refreshToken') != null;
+
+    if (isTokenSet) {
+      localStorage.removeItem('token');
+    }
+    if (isRefreshTokenSet) {
+      localStorage.removeItem('refreshToken');
+    }
+    if (isTokenSet || isRefreshTokenSet) {
+      window.location.reload();
     }
   }
 }
